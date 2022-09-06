@@ -17,17 +17,23 @@ describe('LoginForm test', () => {
   });
 
   it('login button enabled/disabled', () => {
-    const onSubmit = jest.fn();
+    const onSubmit = jest.fn().mockImplementation((event) => {
+      event.preventDefault();
+    });
     const utils = render(<LoginForm onSubmit={onSubmit} />);
 
     const email = utils.getByPlaceholderText('이메일을 입력해 주세요.');
     const password = utils.container.querySelector('input[type=password]') as Element;
-    const LoginButton = utils.getByText('로그인');
-    expect(LoginButton).toBeDisabled();
+    const loginButton = utils.getByText('로그인');
+    expect(loginButton).toBeDisabled();
 
     fireEvent.change(email, { target: { value: 'zmzhoi@gmail.com' } });
-    fireEvent.change(password, { target: { value: '1234' } });
+    expect(loginButton).toBeDisabled();
 
-    expect(LoginButton).toBeEnabled();
+    fireEvent.change(password, { target: { value: '1234' } });
+    expect(loginButton).toBeEnabled();
+
+    fireEvent.click(loginButton);
+    expect(onSubmit).toHaveBeenCalledTimes(1);
   });
 });
