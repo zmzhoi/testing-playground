@@ -2,6 +2,7 @@
   "extends": ["@zmzhoi/eslint-config-react"],
   "rules": {
     "jest/no-focused-tests": "off",
-    "jest/expect-expect": "off"
+    "jest/expect-expect": "off",
+    "@typescript-eslint/no-extra-semi": "off"
   }
 }
