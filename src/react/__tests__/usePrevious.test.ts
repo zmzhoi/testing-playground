@@ -1,4 +1,5 @@
 import { renderHook } from '@testing-library/react-hooks';
+
 import usePrevious from '../hooks/usePrevious';
 
 type PropType = { [key: string]: any } | undefined;
@@ -28,12 +29,12 @@ describe('usePrevious.ts', () => {
     expect(result.current).toEqual(prevProp);
 
     prevProp = prop;
-    prop = null;
+    prop = undefined;
     rerender(prop);
     expect(result.current).toEqual(prevProp);
 
     prevProp = prop;
-    prop = null;
+    prop = undefined;
     rerender(prop);
     expect(result.current).toEqual(prevProp);
   });

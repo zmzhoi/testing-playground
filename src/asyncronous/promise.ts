@@ -3,7 +3,7 @@ interface User {
   name: string;
 }
 export function fetchUser(userId: number) {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     const user: User[] = [
       {
         id: 1,

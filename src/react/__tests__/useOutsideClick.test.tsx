@@ -1,8 +1,9 @@
-import React, { RefObject, useRef } from 'react';
-import useOutSideClick from '../hooks/useOutsideClick';
-import { fireEvent, render } from '@testing-library/react';
+import { RefObject } from 'react';
+
 import { renderHook } from '@testing-library/react-hooks';
 import userEvent from '@testing-library/user-event';
+
+import useOutSideClick from '../hooks/useOutsideClick';
 
 describe('useOutsideClick.ts', () => {
   const user = userEvent.setup();
