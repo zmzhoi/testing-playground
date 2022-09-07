@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "test:watch": "jest --watch --verbose"
+    "test:watch": "jest --watch --verbose",
+    "format": "prettier --check \"**/*.(ts|tsx|js|jsx|md|json)\"",
+    "format:fix": "prettier --write \"**/*.(ts|tsx|js|jsx|md|json)\""
   },
   "keywords": [],
   "author": "",
@@ -19,6 +21,7 @@
     "@zmzhoi/eslint-config-react": "^2.0.0",
     "jest": "^28.1.3",
     "jest-environment-jsdom": "^29.0.1",
+    "prettier": "^2.7.1",
     "ts-jest": "^28.0.8",
     "typescript": "^4.8.2"
   },
