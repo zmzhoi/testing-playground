@@ -1,6 +1,6 @@
 # ⚡️ Testing Playground ⚡️
 
-> javascript 테스트 코드 작성을 위한 Playground 레포지토리 입니다.
+> Javascript 테스트 코드 작성을 위한 Playground 레포지토리 입니다.
 
 ### `FrontEnd`
 
