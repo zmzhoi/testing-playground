@@ -11,10 +11,6 @@ function setup(Route: JSX.Element) {
 }
 
 describe('AuthorizedRoute', () => {
-  afterEach(() => {
-    jest.clearAllMocks();
-  });
-
   it('Anything should not render when authroized is null', () => {
     jest.spyOn(hooks, 'default').mockReturnValue({
       authorized: null,
